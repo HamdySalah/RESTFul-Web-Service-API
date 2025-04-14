@@ -1,4 +1,4 @@
-﻿# RESTFul-Web-Service
+﻿# RESTFul-Web-Service-API
 # 💻 Web Services Labs – PHP API Projects
 
 This repository contains the solutions to two PHP-based Web Services labs. Each lab demonstrates real-world usage of APIs using modern web service technologies like REST (cURL, Guzzle) and SOAP (SoapClient).
