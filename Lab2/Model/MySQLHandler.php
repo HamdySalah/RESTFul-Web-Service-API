@@ -17,7 +17,7 @@ class MySQLHandler {
     }
 
     public function connect() {
-        $handler = mysqli_connect(__HOST__, __USER__, __PASS__, __DB__);
+        $handler = mysqli_connect(__HOST__, __USER__, __PASS__, __DB__, __PORT__);
         if ($handler) {
             $this->_db_handler = $handler;
             return true;
@@ -58,7 +58,7 @@ class MySQLHandler {
     }
 
     private function get_results($sql) {
-        $this->debug($sql);
+        // $this->debug($sql);
         $_handler_results = mysqli_query($this->_db_handler, $sql);
         $_arr_results = array();
 
@@ -138,7 +138,7 @@ class MySQLHandler {
         $table = $this->_table;
         $primary_key = $this->_primary_key;
         $sql = "delete  from `" . $table . "` where `" . $primary_key . "` = $id";
-        $this->debug($sql);
+        // $this->debug($sql);
         if (mysqli_query($this->_db_handler, $sql)) {
             $this->disconnect();
             return true;
@@ -148,9 +148,9 @@ class MySQLHandler {
         }
     }
 
-    private function debug($sql) {
-        if (__Debug__Mode__ === 1)
-            echo "<h5>Sent Query: </h5>" . $sql . "<br/> <br/>";
-    }
+    // private function debug($sql) {
+    //     if (__Debug__Mode__ === 1)
+    //         echo "<h5>Sent Query: </h5>" . $sql . "<br/> <br/>";
+    // }
 
 }
